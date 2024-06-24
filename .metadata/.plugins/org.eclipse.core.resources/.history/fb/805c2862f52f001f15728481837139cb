@@ -1,0 +1,13 @@
+package com.api.rest.cliente.entidades;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "clientes")
+public class Cliente {
+	private String dniCliente;
+	private String nombreCliente; 
+	private String direccionCliente;
+	
+}

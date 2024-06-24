@@ -1,0 +1,12 @@
+package com.api.rest.fiestas.entidades;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "personas")
+public class Persona { 
+	private Long id;
+	private String nombre;
+	private Integer edad;
+}

@@ -1,0 +1,14 @@
+package com.api.rest.banca.servicios;
+
+import java.util.List;
+
+import com.api.rest.banca.dtos.ClienteDto;
+import com.api.rest.banca.entidades.Cliente;
+
+public interface ClienteService { 
+	List<ClienteDto> obtenerClientes();
+	ClienteDto obtenerClientePorNif(String nif);
+	ClienteDto crearCliente(Cliente cliente);
+	ClienteDto actualizarCliente(String nif,ClienteDto clienteDto);
+	ClienteDto borrarClientePorNif(String nif);
+}

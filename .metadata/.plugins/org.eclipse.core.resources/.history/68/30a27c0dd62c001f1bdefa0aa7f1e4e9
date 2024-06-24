@@ -1,0 +1,75 @@
+package com.api.rest.banca.servicios.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.rest.banca.dtos.ClienteDto;
+import com.api.rest.banca.entidades.Cliente;
+import com.api.rest.banca.repositorios.ClienteRepository;
+import com.api.rest.banca.servicios.ClienteService;
+
+@Service
+public class ClienteServiceImpl implements ClienteService {
+	@Autowired
+	private ClienteRepository clienteRepository;
+
+	@Override
+	public List<ClienteDto> obtenerClientes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto obtenerClientePorNif(String nif) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto crearCliente(ClienteDto clienteDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto actualizarCliente(String nif, ClienteDto clienteDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto borrarClientePorNif(String nif) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	public ClienteDto convertirADto(Cliente cliente) {
+		ClienteDto clienteDto=new ClienteDto();
+		clienteDto.setId(cliente.getId());
+		clienteDto.setNombre(cliente.getNombre());
+		clienteDto.setApellidos(cliente.getApellidos());
+		clienteDto.setEdad(cliente.getEdad());
+		clienteDto.setEmail(cliente.getEmail()); 
+		clienteDto.setNif(cliente.getNif());
+		clienteDto.setIban(cliente.getIban());
+		clienteDto.setSaldo(cliente.getSaldo());
+		clienteDto.setTransacciones(cliente.getTransacciones());
+		return clienteDto;
+	}
+	
+	public Cliente convertirAEntidad(ClienteDto clienteDto) {
+		ClienteDto clienteDto=new ClienteDto();
+		clienteDto.setId(cliente.getId());
+		clienteDto.setNombre(cliente.getNombre());
+		clienteDto.setApellidos(cliente.getApellidos());
+		clienteDto.setEdad(cliente.getEdad());
+		clienteDto.setEmail(cliente.getEmail()); 
+		clienteDto.setNif(cliente.getNif());
+		clienteDto.setIban(cliente.getIban());
+		clienteDto.setSaldo(cliente.getSaldo());
+		clienteDto.setTransacciones(cliente.getTransacciones());
+		return clienteDto;
+	}
+}

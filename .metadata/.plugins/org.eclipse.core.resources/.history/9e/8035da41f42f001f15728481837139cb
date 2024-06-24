@@ -1,0 +1,7 @@
+spring.application.name=api-rest-spring-boot-clientes-cuentas-bancos
+server.port=5000
+spring.datasource.url=jdbc:mysql://localhost:3306/api_rest_proof 
+spring.datasource.username=admin
+spring.datasource.password=030496
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true

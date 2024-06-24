@@ -1,0 +1,5 @@
+package com.password.generate.controllers;
+
+public class PassGeneratorController {
+
+}

@@ -1,0 +1,10 @@
+package com.api.rest.curso.dtos;
+
+public class EstudianteDto {
+	private Long id; 
+	private String nombre;
+	private String apellidos;
+	private Integer edad;
+	private String nif;
+	private String email;
+}

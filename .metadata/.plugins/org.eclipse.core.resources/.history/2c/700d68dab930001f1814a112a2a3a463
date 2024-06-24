@@ -1,0 +1,19 @@
+package com.api.rest.time.controllers;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import java.time.Instant; 
+import java.util.Date;
+
+@RestController 
+@RequestMapping("/api/timestamp")
+public class TimeStampController {
+	
+	@GetMapping("/:date/{date}") 
+	public ResponseEntity<?> getTimeInMilliseconds(@PathVariable String date) {
+		return ResponseEntity.ok(date);
+	}
+}

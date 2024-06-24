@@ -1,0 +1,52 @@
+package com.api.rest.cliente.dtos;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.api.rest.cliente.entidades.Cuenta;
+
+public class ClienteDto {
+	private String dniCliente;
+	private String nombreCliente; 
+	private String direccionCliente;
+	private List<Cuenta> cuentas=new ArrayList<Cuenta>();
+	
+	public ClienteDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public String getDniCliente() {
+		return dniCliente;
+	}
+
+	public void setDniCliente(String dniCliente) {
+		this.dniCliente = dniCliente;
+	}
+
+	public String getNombreCliente() {
+		return nombreCliente;
+	}
+
+	public void setNombreCliente(String nombreCliente) {
+		this.nombreCliente = nombreCliente;
+	}
+
+	public String getDireccionCliente() {
+		return direccionCliente;
+	}
+
+	public void setDireccionCliente(String direccionCliente) {
+		this.direccionCliente = direccionCliente;
+	}
+
+	public List<Cuenta> getCuentas() {
+		return cuentas;
+	}
+
+	public void setCuentas(List<Cuenta> cuentas) {
+		this.cuentas = cuentas;
+	}
+	
+	
+}

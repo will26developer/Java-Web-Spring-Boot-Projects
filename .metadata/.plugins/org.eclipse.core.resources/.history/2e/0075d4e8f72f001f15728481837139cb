@@ -1,0 +1,47 @@
+package com.api.rest.cliente.entidades;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity 
+@Table(name = "bancos")
+public class Banco {
+	private Long idBanco; 
+	private String nombreBanco;
+	private String ciudadBanco;
+	private List<Cuenta> cuentas=new ArrayList<Cuenta>();
+	
+	public Banco() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getIdBanco() {
+		return idBanco;
+	}
+
+	public void setIdBanco(Long idBanco) {
+		this.idBanco = idBanco;
+	}
+
+	public String getNombreBanco() {
+		return nombreBanco;
+	}
+
+	public void setNombreBanco(String nombreBanco) {
+		this.nombreBanco = nombreBanco;
+	}
+
+	public String getCiudadBanco() {
+		return ciudadBanco;
+	}
+
+	public void setCiudadBanco(String ciudadBanco) {
+		this.ciudadBanco = ciudadBanco;
+	}
+	
+	
+}

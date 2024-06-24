@@ -1,0 +1,5 @@
+package com.api.rest.cliente.dtos;
+
+public class BancoDto {
+
+}

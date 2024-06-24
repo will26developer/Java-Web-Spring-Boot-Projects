@@ -1,0 +1,80 @@
+package com.api.rest.cliente.servicios.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.rest.cliente.dtos.CuentaDto;
+import com.api.rest.cliente.entidades.Cuenta;
+import com.api.rest.cliente.repositorios.CuentaRepository;
+import com.api.rest.cliente.servicios.CuentaService;
+
+@Service
+public class CuentaServiceImpl implements CuentaService { 
+	@Autowired 
+	private CuentaRepository cuentaRepository;
+
+	@Override
+	public List<CuentaDto> obtenerCuentas() {
+		List<CuentaDto> cuentas=new ArrayList<>();
+		for (Cuenta cuenta:cuentaRepository.findAll()) cuentas.add(convertirADto(cuenta));
+		return cuentas;
+	}
+
+	@Override
+	public CuentaDto obtenerCuentaPorId(Long id) {
+		CuentaDto cuentaDto=convertirADto(cuentaRepository.findById(id).orElseThrow()); 
+		if (cuentaDto != null) return cuentaDto;
+		return null;
+	}
+
+	@Override
+	public CuentaDto crearCuenta(CuentaDto cuentaDto) {
+		cuentaRepository.save(convertirAEntidad(cuentaDto));
+		return cuentaDto;
+	}
+
+	@Override
+	public CuentaDto actualizarCuenta(Long id, CuentaDto cuentaDto) {
+		Cuenta cuenta=cuentaRepository.findById(id).orElseThrow();
+		if (cuenta != null) {
+			cuenta.setIdCuenta(cuentaDto.getIdCuenta());
+			cuenta.setClienteDto(cuentaDto.getClienteDto());
+			cuenta.setBancoDto(cuentaDto.getBancoDto());
+			cuenta.setSaldoCuenta(cuentaDto.getSaldoCuenta());
+			cuentaRepository.save(cuenta);
+			return cuentaDto;
+		}
+		return null;
+	}
+
+	@Override
+	public CuentaDto eliminarCuenta(Long id) {
+		Cuenta cuenta=cuentaRepository.findById(id).orElseThrow(); 
+		if (cuenta != null) {
+			cuentaRepository.delete(cuenta);
+			return convertirADto(cuenta);
+		}
+		return null;
+	}
+	
+	private CuentaDto convertirADto(Cuenta cuenta) {
+		CuentaDto cuentaDto=new CuentaDto(); 
+		cuentaDto.setIdCuenta(cuentaDto.getIdCuenta());
+		cuentaDto.setCliente(cuenta.getCliente());
+		cuentaDto.setBanco(cuenta.getBanco());
+		cuenta.setSaldoCuenta(cuenta.getSaldoCuenta());
+		return cuentaDto;
+	}
+	
+	private Cuenta convertirAEntidad(CuentaDto cuentaDto) {
+		Cuenta cuenta=new Cuenta();
+		cuenta.setIdCuenta(cuentaDto.getIdCuenta());
+		cuenta.setCliente(cuentaDto.getClienteDto());
+		cuenta.setBanco(cuentaDto.getBancoDto());
+		cuenta.setSaldoCuenta(cuentaDto.getSaldoCuenta());
+		return cuenta;
+	}
+}

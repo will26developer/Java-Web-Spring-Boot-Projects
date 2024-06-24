@@ -1,0 +1,21 @@
+package com.api.rest.curso.entidades;
+
+import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+@Entity 
+@Table(name = "cursos")
+public class Curso {
+	private Long id;
+	private String nombre;
+	private String ubicacion;
+	private Date fechaInicio;
+	private Date fechaFin;
+	@OneToMany(mappedBy = "curso")
+	private Set<Estudiante> estudiantes=new HashSet<Estudiante>();
+}

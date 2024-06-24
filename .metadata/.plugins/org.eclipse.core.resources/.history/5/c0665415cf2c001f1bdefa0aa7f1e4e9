@@ -1,0 +1,5 @@
+package com.api.rest.banca.repositorios;
+
+public interface ClienteRepository {
+
+}

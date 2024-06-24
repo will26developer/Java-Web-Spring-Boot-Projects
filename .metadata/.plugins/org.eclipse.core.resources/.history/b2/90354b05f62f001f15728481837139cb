@@ -1,0 +1,50 @@
+package com.api.rest.cliente.dtos;
+
+import com.api.rest.cliente.entidades.Banco;
+import com.api.rest.cliente.entidades.Cliente;
+
+public class CuentaDto {
+	private Long idCuenta;
+	private Cliente cliente;
+	private Banco banco;
+	private Double saldoCuenta;
+	
+	public CuentaDto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getIdCuenta() {
+		return idCuenta;
+	}
+
+	public void setIdCuenta(Long idCuenta) {
+		this.idCuenta = idCuenta;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Banco getBanco() {
+		return banco;
+	}
+
+	public void setBanco(Banco banco) {
+		this.banco = banco;
+	}
+
+	public Double getSaldoCuenta() {
+		return saldoCuenta;
+	}
+
+	public void setSaldoCuenta(Double saldoCuenta) {
+		this.saldoCuenta = saldoCuenta;
+	} 
+	
+	
+}

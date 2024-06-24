@@ -1,0 +1,10 @@
+package com.api.rest.cliente.entidades;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity 
+@Table(name = "bancos")
+public class Banco {
+
+}

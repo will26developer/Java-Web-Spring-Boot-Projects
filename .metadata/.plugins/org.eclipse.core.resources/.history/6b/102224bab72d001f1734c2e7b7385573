@@ -1,0 +1,70 @@
+package com.api.rest.curso.servicios.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.rest.curso.dtos.CursoDto;
+import com.api.rest.curso.entidades.Curso;
+import com.api.rest.curso.repositorios.CursoRepository;
+import com.api.rest.curso.servicios.CursoService;
+
+@Service
+public class CursoServiceImpl implements CursoService {
+	@Autowired
+	private CursoRepository cursoRepository;
+
+	@Override
+	public List<CursoDto> obtenerCursos() {
+		return null;
+	}
+
+	@Override
+	public CursoDto obtenerCursoPorId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CursoDto crearCurso(CursoDto cursoDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CursoDto actualizarCurso(Long id, CursoDto cursoDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CursoDto eliminarCursoPorId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	private CursoDto convertirADto(Curso curso) {
+		CursoDto cursoDto=new CursoDto();
+		cursoDto.setId(curso.getId()); 
+		cursoDto.setNombre(curso.getNombre());
+		cursoDto.setUbicacion(curso.getUbicacion());
+		cursoDto.setFechaInicio(curso.getFechaInicio()); 
+		cursoDto.setFechaFin(curso.getFechaFin());
+		cursoDto.setEstudiantes(curso.getEstudiantes());
+		return cursoDto;
+	}
+	
+	private Curso convertirAEntidad(CursoDto cursoDto) {
+		Curso curso=new Curso();
+		curso.setId(cursoDto.getId()); 
+		curso.setNombre(cursoDto.getNombre());
+		curso.setUbicacion(cursoDto.getUbicacion());
+		curso.setFechaInicio(cursoDto.getFechaInicio()); 
+		curso.setFechaFin(cursoDto.getFechaFin());
+		curso.setEstudiantes(cursoDto.getEstudiantes());
+		return curso;
+	}
+	
+	
+}

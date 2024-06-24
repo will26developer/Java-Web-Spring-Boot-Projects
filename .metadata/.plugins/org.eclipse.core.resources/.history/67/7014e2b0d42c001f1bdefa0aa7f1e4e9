@@ -1,0 +1,13 @@
+package com.api.rest.banca.servicios.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.rest.banca.repositorios.ClienteRepository;
+import com.api.rest.banca.servicios.ClienteService;
+
+@Service
+public class ClienteServiceImpl implements ClienteService {
+	@Autowired
+	private ClienteRepository clienteRepository;
+}

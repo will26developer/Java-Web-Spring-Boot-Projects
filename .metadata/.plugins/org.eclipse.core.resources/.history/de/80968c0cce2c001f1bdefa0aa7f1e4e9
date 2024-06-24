@@ -1,0 +1,70 @@
+package com.api.rest.banca.entidades;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "transacciones")
+public class Transaccion { 
+	private Long id;
+	private String ibanProp;
+	private String ibanDest;
+	private Double monto;
+	private String descripcion;
+	private Cliente cliente;
+	
+	public Transaccion() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getIbanProp() {
+		return ibanProp;
+	}
+
+	public void setIbanProp(String ibanProp) {
+		this.ibanProp = ibanProp;
+	}
+
+	public String getIbanDest() {
+		return ibanDest;
+	}
+
+	public void setIbanDest(String ibanDest) {
+		this.ibanDest = ibanDest;
+	}
+
+	public Double getMonto() {
+		return monto;
+	}
+
+	public void setMonto(Double monto) {
+		this.monto = monto;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
+	
+}

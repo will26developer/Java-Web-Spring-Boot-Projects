@@ -1,0 +1,5 @@
+package com.api.rest.curso.dtos;
+
+public class CursoDto {
+
+}

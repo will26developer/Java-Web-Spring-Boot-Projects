@@ -1,0 +1,10 @@
+package com.api.rest.curso.servicios.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.api.rest.curso.servicios.EstudianteService;
+
+@Service
+public class EstudianteServiceImpl implements EstudianteService {
+
+}

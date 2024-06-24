@@ -1,0 +1,10 @@
+package com.api.rest.biblioteca.entidades;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="biblioteca")
+public class Biblioteca {
+	
+}

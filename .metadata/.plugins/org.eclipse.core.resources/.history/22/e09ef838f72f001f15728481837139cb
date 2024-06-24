@@ -1,0 +1,52 @@
+package com.api.rest.cliente.entidades;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "cuentas")
+public class Cuenta {
+	private Long idCuenta;
+	private Cliente cliente;
+	private Banco banco;
+	private Double saldoCuenta;
+	
+	public Cuenta() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Long getIdCuenta() {
+		return idCuenta;
+	}
+
+	public void setIdCuenta(Long idCuenta) {
+		this.idCuenta = idCuenta;
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	public Banco getBanco() {
+		return banco;
+	}
+
+	public void setBanco(Banco banco) {
+		this.banco = banco;
+	}
+
+	public Double getSaldoCuenta() {
+		return saldoCuenta;
+	}
+
+	public void setSaldoCuenta(Double saldoCuenta) {
+		this.saldoCuenta = saldoCuenta;
+	} 
+	
+	
+}

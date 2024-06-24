@@ -1,0 +1,48 @@
+package com.api.rest.banca.servicios.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.rest.banca.dtos.ClienteDto;
+import com.api.rest.banca.repositorios.ClienteRepository;
+import com.api.rest.banca.servicios.ClienteService;
+
+@Service
+public class ClienteServiceImpl implements ClienteService {
+	@Autowired
+	private ClienteRepository clienteRepository;
+
+	@Override
+	public List<ClienteDto> obtenerClientes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto obtenerClientePorNif(String nif) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto crearCliente(ClienteDto clienteDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto actualizarCliente(String nif, ClienteDto clienteDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ClienteDto borrarClientePorNif(String nif) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

@@ -1,0 +1,32 @@
+package com.api.rest.banca.servicios.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.rest.banca.dtos.TransaccionDto;
+import com.api.rest.banca.repositorios.ClienteRepository;
+import com.api.rest.banca.repositorios.TransaccionRepository;
+import com.api.rest.banca.servicios.TransaccionService;
+
+@Service
+public class TransaccionServiceImpl implements TransaccionService {
+	@Autowired
+	private TransaccionRepository transaccionRepository;
+	@Autowired
+	private ClienteRepository clienteRepository;
+	
+	@Override
+	public List<TransaccionDto> obtenerTransacciones() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public TransaccionDto crearNuevaTransaccion(TransaccionDto transaccionDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+}

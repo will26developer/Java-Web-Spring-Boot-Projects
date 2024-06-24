@@ -1,0 +1,5 @@
+package com.api.rest.fiestas.entidades;
+
+public class Habilidad {
+
+}

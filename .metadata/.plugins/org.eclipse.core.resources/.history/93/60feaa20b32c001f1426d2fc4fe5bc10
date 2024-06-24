@@ -1,0 +1,43 @@
+package com.api.rest.biblioteca.controladores;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.api.rest.biblioteca.entidades.Biblioteca;
+import com.api.rest.biblioteca.repositorios.BibliotecaRepository;
+
+import jakarta.validation.Valid;
+
+@RestController
+@RequestMapping("/api/biblioteca")
+public class BibliotecaController {
+	@Autowired
+	private BibliotecaRepository bibliotecaRepository;
+	
+	@GetMapping
+	public ResponseEntity<List<Biblioteca>> obtenerBibliotecas() {
+		return ResponseEntity.ok(bibliotecaRepository.findAll()); 
+	}
+	
+	@GetMapping("obtenerporid/{id}")
+	public ResponseEntity<Biblioteca> obtenerBibliotecaPorId(@PathVariable Long id) {
+		Optional<Biblioteca> bibliotecaOpt=bibliotecaRepository.findById(id);
+		if (bibliotecaOpt.isPresent()) return ResponseEntity.ok(bibliotecaOpt.get());
+		return ResponseEntity.notFound().build();
+	}
+	
+	@PostMapping
+	public ResponseEntity<Biblioteca> nuevaBiblioteca(@Valid @RequestBody Biblioteca biblioteca) {
+		
+	}
+}
+

@@ -1,0 +1,5 @@
+package com.api.rest.curso.entidades;
+
+public class Asignatura {
+
+}

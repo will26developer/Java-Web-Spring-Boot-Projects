@@ -1,0 +1,5 @@
+package com.api.rest.curso.servicios.impl;
+
+public class CursoServiceImpl {
+
+}

@@ -1,0 +1,5 @@
+package com.api.rest.cliente.repositorios;
+
+public interface CuentaRepository {
+
+}

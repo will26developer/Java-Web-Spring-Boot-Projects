@@ -1,0 +1,65 @@
+package com.api.rest.cliente.servicios.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.api.rest.cliente.dtos.CuentaDto;
+import com.api.rest.cliente.entidades.Cuenta;
+import com.api.rest.cliente.repositorios.CuentaRepository;
+import com.api.rest.cliente.servicios.CuentaService;
+
+@Service
+public class CuentaServiceImpl implements CuentaService { 
+	@Autowired 
+	private CuentaRepository cuentaRepository;
+
+	@Override
+	public List<CuentaDto> obtenerCuentas() {
+		List<CuentaDto> cuentas=new ArrayList<CuentaDto>();
+		for (Cuenta cuenta:cuentaRepository.findAll()) cuentas.add(convertirADto(cuenta)); 
+		return cuentas;
+	}
+
+	@Override
+	public CuentaDto obtenerCuentaPorId(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CuentaDto crearCuenta(CuentaDto cuentaDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CuentaDto actualizarCuenta(Long id, CuentaDto cuentaDto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public CuentaDto eliminarCuenta(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	private CuentaDto convertirADto(Cuenta cuenta) {
+		CuentaDto cuentaDto=new CuentaDto();
+		cuentaDto.setIdCuenta(cuenta.getIdCuenta());
+		cuentaDto.setDniClienteDto(cuenta.getCliente().getDniCliente());
+		cuentaDto.setIdBancoDto(cuenta.getBanco().getIdBanco());
+		cuentaDto.setSaldoCuenta(cuenta.getSaldoCuenta());
+		return cuentaDto;
+	}
+	
+	private Cuenta convertirAEntidad(CuentaDto cuentaDto) {
+		Cuenta cuenta=new Cuenta();
+		cuenta.setIdCuenta(cuentaDto.getIdCuenta());
+		cuenta.setSaldoCuenta(cuentaDto.getSaldoCuenta());
+		return cuenta;
+	}
+}
